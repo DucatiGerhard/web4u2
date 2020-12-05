@@ -39,3 +39,19 @@ a.footer-link { /* special link appearance for footer */
 .p7mgm-ColContent a {
 	text-decoration:none;
 }
+
+/* Frosted Glass effect */
+.intro-glass {
+    margin: 0 auto;
+    padding: 2em;
+    width: 60%;
+    border-radius: 10px;
+    background-color: white;
+    background: linear-gradient(135deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,0.09) 100%);
+    /* Add the blur effect */
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: .5px solid rgba(255,255,255,0.1);
+    box-shadow: 50px 50px 100px 0px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px black;
+}
