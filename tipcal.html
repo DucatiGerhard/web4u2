@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TIP Calculator</title>
+<style>
+	body {
+		background-color:antiquewhite;
+	}
+	h1 {
+		text-align: center;
+	}
+	form {
+		margin: 0 auto;
+		text-align: center;
+		width: 300px;
+		border: 1px black solid;
+		box-shadow: 5px 5px 3px silver;
+	}
+	.inputfield, .field {
+		width: 130px;
+		margin: 10px auto;
+		border: 1px solid gray;
+		padding: 5px 5px;
+		border-radius: 5px;
+	}
+	.field {
+		background-color: whitesmoke;
+	}
+	.inputfield {
+		background-color: white;
+	}
+	.slider {
+		margin: 10px auto;
+	}
+	button {
+		padding: 10px;
+		border-radius: 5px;
+		background-color: darkseagreen;
+		font-size: 1em;
+		text-shadow: 1px 1px 5px white;
+	}
+</style>
+</head>
+
+<body>
+
+	<h1>TIP Calculator</h1>
+
+<form name="tip">
+<br>
+	<label for="amount">Price</label><br>
+	<input type="number" name="amount" class="inputfield" id="amount"/>
+	
+	<br><br>
+	
+	<label for="rateInput">Rate <output name="rateOutput" id="rateOutputId">15</output> %</label><br/>
+   	<input type="range" class="slider" name="rateInput" id="rateInputId" value="15" min="0" max="20" oninput="rateOutputId.value = rateInputId.value">
+    
+	
+	<br><br>
+	
+	<label for="tip">Tip</label><br>
+	<div class="field"><output name="tipOutput" id="tipOutputId">15</output></div>
+	<!--input type="number" width="100" name="tip" disabled="disabled"/-->
+	
+	<br><br>
+	
+	<label for="total">Total</label><br>
+	<div class="field"><output name="totalOutput" id="totalOutputId">15</output></div>
+	<!--input type="number" width="100" name="total" id="total" disabled="disabled"/-->
+	
+	<br><br><br>
+	<button onclick="myFunction()">Calculate</button>
+	<br><br>
+	
+	
+</form>
+
+
+
+<script>
+		
+function myFunction() {
+    var amount = document.getElementById("amount").value;
+	var rateInput = document.getElementById("rateInputId").value;
+	var tip = (amount * rateInput) / 100;
+	var total = amount + tip;
+	
+	tipOutputId.value = tip;
+	totalOutputId.value = total;
+	
+	//document.getElementById("tip").value = tip;
+    //document.getElementById("total").value = total;
+	//console.log(tip);
+}
+   
+</script>
+
+
+
+</body>
+</html>
